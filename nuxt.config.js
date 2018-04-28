@@ -15,11 +15,11 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/pug.png' },
-			{ rel: 'stylesheet', type: 'text/css', src: '~/assets/global.scss' },
-      {
-        rel: 'stylesheet',
-        type: 'text/css'
-      }
+			{
+				rel: 'stylesheet',
+				type: 'text/css',
+				href: 'https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i'
+			}
     ]
   },
   /*
@@ -28,6 +28,13 @@ module.exports = {
   router: {
     middleware: 'pages'
   },
+	/*
+	** Hook up env variables
+	*/
+	env: {
+		spaceId: process.env.SPACE_ID,
+		accessToken: process.env.ACCESS_TOKEN
+	},
   /*
   ** Customize the progress bar color
   */
@@ -35,6 +42,9 @@ module.exports = {
   /*
   ** Build configuration
   */
+	plugins: [
+		'~/plugins/contentful'
+	],
   build: {
     /*
     ** Run ESLint on save

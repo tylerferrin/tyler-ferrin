@@ -20,10 +20,11 @@ export default {
 		&__name
 			h1
 				margin: 0
-				font-family: 'Times New Roman', serif
-				font-size: 65px
-				font-weight: 400
-				letter-spacing: 2px
+				font-family: 'Archivo Narrow', sans-serif
+				font-size: 72px
+				line-height: 1
+				font-weight: 700
+				letter-spacing: 0px
 				span::before
 					content: '\A'
 					white-space: pre
