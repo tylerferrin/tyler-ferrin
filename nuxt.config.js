@@ -1,3 +1,6 @@
+require('dotenv').config()
+const { createClient } = require('contentful')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -59,5 +62,26 @@ module.exports = {
         })
       }
     }
-  }
+  },
+	generate: {
+		routes: function () {
+			return client.getEntries()
+			.then((response) => {
+				let filteredDownResponse = _.map(response.items, (item) => {
+					return Object.assign({}, item.fields, item.sys.contentType.sys)
+				})
+				let projects = _.filter(filteredDownResponse, (item) => {
+					return item.id === 'project'
+				})
+				return projects.map((project) => {
+					let title = project.title.split(' ').join('-').toLowerCase()
+					return {
+						route: '/work/' + title,
+						payload: project
+					}
+				})
+			})
+			.catch(console.error)
+		}
+	}
 }
