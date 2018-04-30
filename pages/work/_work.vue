@@ -1,13 +1,18 @@
 <template>
 	<section class="work">
-		<h1 class="work__title">{{this.work.title}}</h1>
 		<div class="work__grid">
-			<div class="work__photo"></div>
+			<WorkImage :work="this.work" />
 		</div>
 	</section>
 </template>
 <script>
+import WorkImage from '../../components/WorkImage'
+
 export default {
+	components: {
+		WorkImage
+	},
+
 	beforeCreate() {
 		// get the title of the project from params
 		let currentWork = this.$route.params.work
@@ -22,11 +27,11 @@ export default {
 </script>
 <style lang="sass">
 	.work
+		margin-top: 150px
 		&__title
 			font-family: 'Helvetica', sans-serif
 			font-size: 16px
 			font-weight: 400
-			margin-top: 100px
 		&__grid
 			display: grid
 			grid-template-columns: 1fr 1fr 1fr 1fr

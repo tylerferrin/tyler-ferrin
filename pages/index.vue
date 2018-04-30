@@ -11,19 +11,19 @@
 				v-if="!isProjects"
 				:description="description"	/>
 		</transition>
-		<SideNav />
+		<!-- <SideNav /> -->
   </section>
 </template>
 
 <script>
 import ProjectGrid from '../components/ProjectGrid'
-import SideNav from '../components/SideNav'
+// import SideNav from '../components/SideNav'
 import About from '../components/About'
 import { mapState } from 'vuex'
 
 export default {
 	components: {
-		SideNav,
+		// SideNav,
 		ProjectGrid,
 		About
 	},

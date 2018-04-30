@@ -2,14 +2,17 @@
   <section class="layout">
 		<Header />
     <nuxt/>
+		<SideNav />
   </section>
 </template>
 <script>
 import Header from '~/components/Header'
+import SideNav from '~/components/SideNav'
 
 export default {
 	components: {
-		Header
+		Header,
+		SideNav
 	}
 }
 </script>

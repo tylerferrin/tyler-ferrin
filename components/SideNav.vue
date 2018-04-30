@@ -7,14 +7,18 @@
 				v-bind:class="{ 'active': !isProjects  }"
 				@click="toggleIndexComponents(false)"
 			>
-				About
+				<nuxt-link to="/">
+					About
+				</nuxt-link>
 			</li>
 			<li
 				class="side-nav__list-item"
 				@click="toggleIndexComponents(true)"
 				v-bind:class="{ 'active': isProjects  }"
 			>
-				Work
+				<nuxt-link to="/">
+					Work
+				</nuxt-link>
 			</li>
 			<li
 				class="side-nav__list-item side-nav__list-item--off-site email"
@@ -41,7 +45,9 @@ export default {
 </script>
 <style lang="sass">
 	.side-nav
-		position: relative
+		position: absolute
+		top: 1vw
+		right: 2vw
 		display: block
 		width: 125px
 		height: 100%
@@ -56,11 +62,16 @@ export default {
 		&__list-item
 			position: relative
 			margin: 15px 0
+			text-align: right
 			text-transform: uppercase
 			cursor: pointer
 			line-height: 1
 			letter-spacing: 1px
-			transition: letter-spacing .45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+			transition: all .45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+			a
+				display: block
+				color: black
+				text-decoration: none
 			&--off-site
 				padding: 5px 0
 				transition: all .25s ease-in-out

@@ -26,6 +26,7 @@ export default {
 		font-size: 1.5vw
 		letter-spacing: .5px
 		line-height: 1.35
+		transition: all .45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 		a
 			color: black
 			text-decoration: none

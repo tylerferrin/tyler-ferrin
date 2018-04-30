@@ -1,5 +1,13 @@
 require('dotenv').config()
-const { createClient } = require('contentful')
+const _ = require('lodash')
+const contentful = require('contentful')
+
+const config = {
+  space: process.env.SPACE_ID,
+  accessToken: process.env.ACCESS_TOKEN
+}
+
+const client = contentful.createClient(config)
 
 module.exports = {
   /*
