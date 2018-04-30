@@ -1,9 +1,16 @@
 <template>
 	<section class="work-image">
-		<a target="_blank" :href="this.work.liveUrl" :id="this.work.photoExample[0].fields.title">
-			<!-- image will be loaded here after component is mounted -->
-		</a>
-		<Loader v-if="loading"/>
+		<div class="work-image__wrapper">
+			<a target="_blank" :href="this.work.liveUrl" :id="this.work.photoExample[0].fields.title">
+				<!-- image will be loaded here after component is mounted -->
+			</a>
+			<transition
+				name="loader-fade"
+				mode="out-in"
+			>
+				<Loader v-if="loading"/>
+			</transition>
+		</div>
 	</section>
 </template>
 
@@ -14,9 +21,11 @@ export default {
 	components: {
 		Loader
 	},
+
 	props: [
 		'work'
 	],
+
 	data () {
 		return {
 			loading: true
@@ -29,11 +38,12 @@ export default {
 
 		const onSuccess = () => {
 			this.loading = false
-			anchor.appendChild(img)
-			img.removeEventListener('load', onSuccess)
+			setTimeout(() => {
+				anchor.appendChild(img)
+			}, 250)
 		}
 
- 		img.addEventListener('load', onSuccess)
+ 		img.onload = onSuccess
 		img.src = `${this.work.photoExample[0].fields.file.url}`
 	}
 }
@@ -43,13 +53,19 @@ export default {
 		grid-column-start: 1
 		grid-column-end: 3
 		position: relative
+		&__wrapper
+			padding-bottom: 61.25%
 		a
+			position: absolute
+			display: block
+			width: 100%
+			height: 100%
 			img
 				border-radius: 5px
 				width: 100%
 				height: 100%
 				animation-name: showUp
-				animation-duration: .25s
+				animation-duration: .5s
 				animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
 				animation-iteration-count: 1
 				animation-fill-mode: forwards
@@ -58,10 +74,20 @@ export default {
 	@keyframes showUp
 		0%
 			opacity: 0
-			transform: translate3d(0, 100px, 0)
+			transform: translate3d(-50px, 0, 0)
 		100%
 			opacity: 1
 			transform: translate3d(0,0, 0)
+
+	.loader-fade-enter
+		opacity: 0
+
+	.loader-fade-leave
+		opacity: 1
+
+	.loader-fade-enter-active,
+	.loader-fade-leave-active
+		transition: opacity .25s cubic-bezier(0.55, 0.055, 0.675, 0.19)
 
 
 </style>

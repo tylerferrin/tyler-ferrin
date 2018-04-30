@@ -3,17 +3,22 @@
 		<Header />
     <nuxt/>
 		<SideNav />
+		<WorkSlider  v-if="this.page !== 'index' "/>
   </section>
 </template>
 <script>
 import Header from '~/components/Header'
 import SideNav from '~/components/SideNav'
+import WorkSlider from '~/components/WorkSlider'
+import { mapState } from 'vuex'
 
 export default {
 	components: {
 		Header,
-		SideNav
-	}
+		SideNav,
+		WorkSlider
+	},
+	computed: mapState([ 'page' ])
 }
 </script>
 <style lang="sass">

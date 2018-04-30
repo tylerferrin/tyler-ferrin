@@ -2,15 +2,21 @@
 	<section class="work">
 		<div class="work__grid">
 			<WorkImage :work="this.work" />
+			<WorkInfo :work="this.work" />
+			<!-- <WorkSlider /> -->
 		</div>
 	</section>
 </template>
 <script>
 import WorkImage from '../../components/WorkImage'
+import WorkInfo from '../../components/WorkInfo'
+import WorkSlider from '../../components/WorkSlider'
 
 export default {
 	components: {
-		WorkImage
+		WorkImage,
+		WorkInfo,
+		WorkSlider
 	},
 
 	beforeCreate() {

@@ -9,7 +9,8 @@ export const state = () => ({
 	currentProjectIndex: null,
 	allProjectUrls: [],
 	isProjects: false,
-	description: {}
+	description: {},
+	imageLoading: true
 })
 
 export const mutations = {
@@ -30,6 +31,9 @@ export const mutations = {
 	},
 	setCurrentProjectIndex (state, currentProjectIndex) {
 		state.currentProjectIndex = currentProjectIndex
+	},
+	setImageLoading (state, imageLoading) {
+		state.imageLoading = imageLoading
 	}
 }
 

@@ -50,7 +50,6 @@ export default {
 		right: 2vw
 		display: block
 		width: 125px
-		height: 100%
 		grid-column-start: 8
 		&__list
 			display: block

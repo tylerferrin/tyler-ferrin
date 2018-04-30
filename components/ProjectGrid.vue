@@ -41,7 +41,8 @@ export default {
 			grid-column-gap: 1.5vw
 			grid-row-gap: 5.5vh
 		&__project
-			border-bottom: 2px solid black
+			border-top: 2px solid black
+			padding-top: 25px
 			color: black
 			height: 100px
 		&__counter

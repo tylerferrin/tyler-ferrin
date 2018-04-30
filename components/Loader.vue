@@ -23,10 +23,8 @@
 		justify-content: center
 		align-items: center
 		background-color: transparent
-		padding-top: 56%
 		.animation-wrapper
-			position: absolute
-			top: 0
+			position: relative
 			width: 50%
 			height: 100%
 			display: flex
