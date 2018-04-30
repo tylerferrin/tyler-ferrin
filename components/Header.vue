@@ -36,5 +36,7 @@ export default {
 					font-weight: 400
 					letter-spacing: 0px
 					transition: all .25s ease-in-out
+					@media screen and (max-width: 1024px)
+						font-size: 20px
 
 </style>

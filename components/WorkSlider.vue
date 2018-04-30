@@ -53,6 +53,11 @@ export default {
 		flex-direction: row
 		justify-content: space-between
 		width: 50%
+		@media screen and (max-width: 1024px)
+			width: 75%
+		@media screen and (max-width: 768px)
+			width: 100%
+			padding-bottom: 50px
 		a
 			display: block
 			margin-top: 16px
@@ -63,5 +68,7 @@ export default {
 			text-decoration: none
 			&:focus
 				color: black
+			@media screen and (max-width: 1024px)
+				font-size: 14px
 
 </style>

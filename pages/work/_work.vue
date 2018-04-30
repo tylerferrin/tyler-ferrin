@@ -34,6 +34,8 @@ export default {
 <style lang="sass">
 	.work
 		margin-top: 150px
+		@media screen and (max-width: 1024px)
+			margin-top: 100px
 		&__title
 			font-family: 'Helvetica', sans-serif
 			font-size: 16px

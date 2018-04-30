@@ -55,6 +55,11 @@ export default {
 		grid-column-start: 1
 		grid-column-end: 3
 		position: relative
+		@media screen and (max-width: 1024px)
+			grid-column-end: 4
+		@media screen and (max-width: 768px)
+			grid-column-end: 5
+			grid-row-start: 3
 		&__wrapper
 			padding-bottom: 61.25%
 		a

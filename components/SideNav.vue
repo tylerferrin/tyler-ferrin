@@ -46,10 +46,9 @@ export default {
 <style lang="sass">
 	.side-nav
 		position: absolute
-		top: 1vw
+		top: 0
 		right: 2vw
 		display: block
-		width: 125px
 		grid-column-start: 8
 		&__list
 			display: block
@@ -58,6 +57,8 @@ export default {
 			list-style-type: none
 			font-family: 'Helvetica', sans-serif
 			font-size: 1.5vw
+			@media screen and (max-width: 1024px)
+				font-size: 14px
 		&__list-item
 			position: relative
 			margin: 15px 0
@@ -72,7 +73,7 @@ export default {
 				color: black
 				text-decoration: none
 			&--off-site
-				padding: 5px 0
+				padding: 0px 0
 				transition: all .25s ease-in-out
 				margin-bottom: 10px
 				a
@@ -91,6 +92,8 @@ export default {
 			animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
 			animation-iteration-count: 1
 			animation-fill-mode: forwards
+			@media screen and (max-width: 1024px)
+				top: 16px
 
 	@keyframes extend
 		0%
