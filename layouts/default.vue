@@ -3,7 +3,7 @@
 		<Header />
     <nuxt/>
 		<SideNav />
-		<WorkSlider  v-if="this.page !== 'index' "/>
+		<WorkSlider  v-if="this.workSliderIsShowing"/>
   </section>
 </template>
 <script>
@@ -18,7 +18,14 @@ export default {
 		SideNav,
 		WorkSlider
 	},
-	computed: mapState([ 'page' ])
+	computed: mapState([ 'workSliderIsShowing' ]),
+	watch: {
+		'$route' (to, from) {
+			if (to.name === 'index' && from.name === 'work-work') {
+				this.$store.commit('toggleWorkSlider', false)
+			}
+		}
+	}
 }
 </script>
 <style lang="sass">

@@ -6,7 +6,6 @@
 			</a>
 			<transition
 				name="loader-fade"
-				mode="out-in"
 			>
 				<Loader v-if="loading"/>
 			</transition>
@@ -38,8 +37,11 @@ export default {
 
 		const onSuccess = () => {
 			this.loading = false
+
+			// use a set timeout to match give the Loader the 250ms to fadeout
 			setTimeout(() => {
 				anchor.appendChild(img)
+				this.$store.commit('toggleWorkSlider', true)
 			}, 250)
 		}
 

@@ -65,7 +65,7 @@ export default {
 			text-transform: uppercase
 			cursor: pointer
 			line-height: 1
-			letter-spacing: 1px
+			letter-spacing: .5px
 			transition: all .45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 			a
 				display: block
@@ -79,8 +79,6 @@ export default {
 					color: black
 					text-decoration: none
 
-		&__list-item.active
-			letter-spacing: 5px
 		&__list-item.active::after
 			content: ' '
 			position: absolute

@@ -10,7 +10,7 @@ export const state = () => ({
 	allProjectUrls: [],
 	isProjects: false,
 	description: {},
-	imageLoading: true
+	workSliderIsShowing: false
 })
 
 export const mutations = {
@@ -32,8 +32,8 @@ export const mutations = {
 	setCurrentProjectIndex (state, currentProjectIndex) {
 		state.currentProjectIndex = currentProjectIndex
 	},
-	setImageLoading (state, imageLoading) {
-		state.imageLoading = imageLoading
+	toggleWorkSlider (state, workSliderIsShowing) {
+		state.workSliderIsShowing = workSliderIsShowing
 	}
 }
 
