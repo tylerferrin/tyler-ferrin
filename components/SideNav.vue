@@ -46,7 +46,7 @@ export default {
 <style lang="sass">
 	.side-nav
 		position: absolute
-		top: 0
+		top: 2vw
 		right: 2vw
 		display: block
 		grid-column-start: 8
