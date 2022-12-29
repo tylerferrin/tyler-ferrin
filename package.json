@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -21,11 +21,11 @@
     "dotenv": "^5.0.1",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^4.0.0",
     "lodash": "^4.17.10",
     "marked": "^0.3.19",
     "node-sass": "^4.14.1",
-    "sass-loader": "^7.0.1"
+    "sass-loader": "^13.2.0"
   }
 }
